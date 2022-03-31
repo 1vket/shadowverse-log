@@ -7,7 +7,7 @@ var sheet_num=1;
 var data;
 
 function load_json() {
-  //TODO ファイルをロードしてdataに格納
+  //ファイルをロードしてdataに格納
   var files = fs.readdirSync('./sheets/');
   if (files.length == 0){
     create_sheet();
@@ -21,7 +21,7 @@ function load_json() {
 
 
 function save_json() {
-  //TODO dataをjsonファイルに出力
+  //dataをjsonファイルに出力
   var json_filename = './sheets/'+sheet_num+'.json';
   fs.writeFileSync(json_filename, JSON.stringify(data));
 }
@@ -295,6 +295,15 @@ function set_record(){
 
 
 function initScript(){
+  // folder no sakusei
+  fs.mkdir('./sheets', (e) => {
+    if (e){
+      console.log('すでにあります');
+      return;
+    }
+  });
+
+
   // jsonのロード
   load_json();
 
