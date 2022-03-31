@@ -1,0 +1,43 @@
+#sheets {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#sheet-num {
+  width: 20%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#sheet-name {
+  width: 60%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#new-sheet {
+  width: 20%;
+}
+
+.deck-type {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.deck-type div {
+  width: 30%;
+}
+
+#data-add {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#data-add div {
+  width: 20%;
+}
+
+#deck-add {
+  display: flex;
+  flex-wrap: wrap;
+}

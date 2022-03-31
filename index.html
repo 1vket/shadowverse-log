@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Hello World!</title>
+    <link rel="stylesheet" href="css/color.css">
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+    <div name='sheets' id="sheets">
+      <div id="sheet-num" class="con1">
+        <div>No.</div>
+        <div><select id="sheet-no"></select></div>
+      </div>
+      <div id="sheet-name" class="con1">
+        <div>title</div>
+        <div><input type="text" id="title-box"></div>
+      </div>
+      <div id="new-sheet" class="con1">
+        <button type="button" id='new-btn'>新規</button>
+      </div>
+    </div>
+    <div name="input-tab" id="input-tab">
+      <div name="me" id="me" class="deck-type">
+        <div>自分</div>
+        <div><select size='4' id="me-class" class="lclass"></select></div>
+        <div><select size='4' id='me-deck'></select></div>
+      </div>
+      <div name="enm" id="enm" class="deck-type">
+        <div>相手</div>
+        <div><select size='4' id='enm-class' class='lclass'></select></div>
+        <div><select size='4' id='enm-deck'></select></div>
+      </div>
+      <div name="data-add" id="data-add">
+        <div>即リタ</div>
+        <div><input type="checkbox" id="rita-check"></div>
+        <div><button type="button" id="win-btn">win</button></div>
+        <div><button type="button" id="lose-btn">lose</button></div>
+      </div>
+      <div name="deck-add" id="deck-add">
+        <div>デッキ追加</div>
+        <div><select id="deck-class" class='lclass'></select></div>
+        <div><input type="text" id="deck-name"></div>
+        <div><button type="button" id="deck-add-btn">追加</button></div>
+      </div>
+    </div>
+    <div name="show-tab" id="show-tab">
+      <div>戦績</div>
+      <div><table id="record-table">
+        <tr>
+          <th>クラス</th>
+          <th>遭遇率</th>
+          <th><select id="record-set1"></select></th>
+          <th><select id="record-set2"></select></th>
+        </tr>
+      </table></div>
+    </div>
+    <script src="js/script.js"></script>
+  </body>
+</html>
