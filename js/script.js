@@ -8,12 +8,12 @@ var data;
 
 function load_json() {
   //ファイルをロードしてdataに格納
-  var files = fs.readdirSync('./sheets/');
+  var files = fs.readdirSync('sheets/');
   if (files.length == 0){
     create_sheet();
     sheet_num = 1;
   }
-  var json_filename = './sheets/'+sheet_num+'.json';
+  var json_filename = 'sheets/'+sheet_num+'.json';
   var file = fs.readFileSync(json_filename, {encoding: "utf8"});
   data = JSON.parse(file);
   title_box.value = data.title;
@@ -22,7 +22,7 @@ function load_json() {
 
 function save_json() {
   //dataをjsonファイルに出力
-  var json_filename = './sheets/'+sheet_num+'.json';
+  var json_filename = 'sheets/'+sheet_num+'.json';
   fs.writeFileSync(json_filename, JSON.stringify(data));
 }
 
@@ -51,8 +51,8 @@ sheet_num_selectbox.addEventListener('change', (e)=> {
 
 function create_sheet() {
   var original_json = '{"title":"default","decks":{"E":[],"R":[],"W":[],"D":[],"Nc":[],"V":[],"B":[],"Nm":[]},"record":[]}';
-  var files = fs.readdirSync('./sheets/'); 
-  fs.writeFileSync(('./sheets/'+(files.length + 1))+'.json', original_json);
+  var files = fs.readdirSync('sheets/'); 
+  fs.writeFileSync(('sheets/'+(files.length + 1))+'.json', original_json);
 }
 
 var new_sheet_button = document.getElementById('new-btn');
@@ -149,9 +149,9 @@ deck_add_button.addEventListener('click', (e) => {
 function set_selectbox(){
   reset_selectbox(sheet_num_selectbox);
   // json一覧をロードし、num selectboxに表示
-  var files = fs.readdirSync('./sheets/');
+  var files = fs.readdirSync('sheets/');
   for (let file of files){
-    var json_file = fs.readFileSync("./sheets/"+file, {encoding: "utf8" });
+    var json_file = fs.readFileSync("sheets/"+file, {encoding: "utf8" });
     var d = JSON.parse(json_file);
     const option = document.createElement('option');
     option.value = file.match(/\d+/)[0];
@@ -296,7 +296,7 @@ function set_record(){
 
 function initScript(){
   // folder no sakusei
-  fs.mkdir('./sheets', (e) => {
+  fs.mkdir('sheets', (e) => {
     if (e){
       console.log('すでにあります');
       return;
